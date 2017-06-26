@@ -45,13 +45,13 @@ such as "type", which allows many different row formats to exist, for the dictio
 
 For example, here are two different formats of row dictionaries, which are differentiated by their "type" field:
 
-"type" = "hidden":
+*"type" = "hidden":*
 
 ```
 {"name":"_id", "type":"hidden", "value":""}
 ```
 
-"type" = "text":
+*"type" = "text":*
 
 ```
 {"name":"name", "label":"Name", "placeholder":"widget name", "icon":"icon-file-text", "type":"text", "size":"6", "value":"", "info":"", "color":""}
