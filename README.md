@@ -255,7 +255,7 @@ This ensures an integer must exist in this data.  If we make it optional, it cou
 ## JSON list of things
 
 ```
-["Bob", 5, [1,2,3,1000]]
+["Bob", 5.1, [1,2,3,1000]]
 ```
 
 ### DDD
@@ -264,7 +264,7 @@ This ensures an integer must exist in this data.  If we make it optional, it cou
 {"list":
   [
     {"type": "string"},
-    {"type": "int"},
+    {"type": "float"},
     {"list":
       [
         {"type": "int", "optional": true, "min": 0, "max": 1001},
@@ -275,7 +275,7 @@ This ensures an integer must exist in this data.  If we make it optional, it cou
 }
 ```
 
-This is a list with 3 fixed elements:  a string, an int, and a list.
+This is a list with 3 fixed elements:  a string, a float, and a list.
 
 The inner list contains 0 to an infinite number of integers, with a minimum value of 0, and a maximum value of 1001.
 
