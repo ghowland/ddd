@@ -104,7 +104,7 @@ In the above format, the inner 2 string pairs are fixed in length, but we can ha
 }
 ```
 
-This data has a fixed field (table), and then a dictionary that can have any number of fields (defaults) with any values.
+This data has a fixed field (`table`), and then a dictionary that can have any number of fields (`defaults`) with any values.
 
 ### DDD
 
@@ -125,9 +125,9 @@ This data has a fixed field (table), and then a dictionary that can have any num
 }
 ```
 
-We use a "keydict" at the top level, because we are basing this on dictionary keys, and we need to be in a list to use Row Dicts.
+We use a `"keydict"` at the top level, because we are basing this on dictionary keys, and we need to be in a list to use Row Dicts.
 
-Defaults uses the "*" character to specify any field name can go here (any number of them as well), and the value requirements are type "any", so any type of data can be stored here.
+Defaults uses the `"*"` character to specify any field name can go here (any number of them as well), and the value requirements are type `"any"`, so any type of data can be stored here.
 
 ## JSON Format: Description of form field layout
 
@@ -151,9 +151,9 @@ Defaults uses the "*" character to specify any field name can go here (any numbe
 }
 ```
 
-This is similar to the previous example, with a fixed string in "dialog_title", but the "form" is a list of lists (rows and columns) for fields in an Edit Form layout.
+This is similar to the previous example, with a fixed string in `"dialog_title"`, but the `"form"` is a list of lists (rows and columns) for fields in an Edit Form layout.
 
-Because we are using rows, and we want to have repeating dictionaries in those rows with correct field values/types and the correct names/count of fields, we use a Row Dict, and perform a "switch" for the record type on the "type" field, which is the key for this Edit Form field layout data.
+Because we are using rows, and we want to have repeating dictionaries in those rows with correct field values/types and the correct names/count of fields, we use a Row Dict, and perform a "switch" for the record type on the `"type"` field, which is the key for this Edit Form field layout data.
 
 ### DDD
 
