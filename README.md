@@ -230,7 +230,7 @@ If we want my data to be a single value.
 {"type": "int", "optional": false}
 ```
 
-This ensures an integer must exist in this data.  If we make it optional, it could be empty or return None/nil/etc, depending on the implementation.
+This ensures an integer must exist in this data.  If we make it optional, it could be an empty string or return None/nil/etc, depending on the implementation.
 
 ## JSON list of things
 
