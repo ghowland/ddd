@@ -46,11 +46,11 @@ such as "type", which allows many different row formats to exist, for the dictio
 For example, here are two different formats of row dictionaries, which are differentiated by their "type" field:
 
 ```
-{"name":"_id", "type":"hidden", "value":""},
+{"name":"_id", "type":"hidden", "value":""}
 ```
 
 ```
-{"name":"name", "label":"Name", "placeholder":"widget name", "icon":"icon-file-text", "type":"text", "size":"6", "value":"", "info":"", "color":""},
+{"name":"name", "label":"Name", "placeholder":"widget name", "icon":"icon-file-text", "type":"text", "size":"6", "value":"", "info":"", "color":""}
 ```
 
 The first one only has 2 fields besides the "type" field (hidden), but the second one has 8 other fields.  By allowing selection of the field requirements to switched against the "type" value, we can have differently formatted dictionaries in the same list, following these validation rules.
