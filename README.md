@@ -4,7 +4,7 @@ DDD is a format for describing what data should look like.
 
 It can be used for validation as well as population.
 
-DDD is not meant to be able to model any data possible, but it can model many formats of data with very simple descriptions.
+*NOTE: DDD is not meant to be able to model any data possible, but it can model many formats of data with very simple descriptions.  I haven't tested it to see what it cannot create/validate yet, but for all the things I currently need to validate/populate, it works well.*
 
 # Data Types
 
