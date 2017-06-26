@@ -57,7 +57,7 @@ Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict
 "optional": false
 ```
 
-The above field is a default value in all of our types.  Any of them can be optional, for instance.
+The above field is a default value in all of our types.  Any of them can set this to true, and then do not need to exist.  If it is not specified, one of the specified requirements must be met in the data to be valid.
 
 ### Value Requirements Constraints
 
