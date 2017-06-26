@@ -63,6 +63,8 @@ Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict
 ]
 ```
 
+In the above format, the inner 2 string pairs are fixed in length, but we can have any number of those 2-tuples of strings, or any number of the next higher level of list element (which contain the groupings of 2-tuple strings)
+
 ### DDD
 
 ```{
@@ -87,6 +89,8 @@ Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict
    }
 ```
 
+3 embedded lists, where the inner 2 lists are variadic, which means they can take N lists of 2-tuple strings, or N of the next higher level list containers.
+
 ## JSON Format: Description of defaults and a table name
 
 ```
@@ -99,6 +103,8 @@ Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict
   }
 }
 ```
+
+This data has a fixed field (table), and then a dictionary that can have any number of fields (defaults) with any values.
 
 ### DDD
 
@@ -119,6 +125,10 @@ Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict
 }
 ```
 
+We use a "keydict" at the top level, because we are basing this on dictionary keys, and we need to be in a list to use Row Dicts.
+
+Defaults uses the "*" character to specify any field name can go here (any number of them as well), and the value requirements are type "any", so any type of data can be stored here.
+
 ## JSON Format: Description of form field layout
 
 ```
@@ -133,13 +143,17 @@ Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict
       {"name":"udn_data_json", "label":"Info", "placeholder":"", "icon":"icon-atom", "type":"ace", "size":"12", "value":"", "info":"", "color":"", "format": "json"}
     ],
     [
-      {"name":"_id", "type":"hidden", "value":"", "size":"4", "color":"", "label":"ID"},
-      {"name":"_web_data_widget_instance_id", "type":"hidden", "value":"", "size":"4", "color":"", "label":"Data Widget"},
-      {"name":"_table", "type":"hidden", "value":"", "size":"4", "color":"", "label":"Table"}
+      {"name":"_id", "type":"hidden", "value":""},
+      {"name":"_web_data_widget_instance_id", "type":"hidden", "value":""},
+      {"name":"_table", "type":"hidden", "value":""}
     ]
   ]
 }
 ```
+
+This is similar to the previous example, with a fixed string in "dialog_title", but the "form" is a list of lists (rows and columns) for fields in an Edit Form layout.
+
+Because we are using rows, and we want to have repeating dictionaries in those rows with correct field values/types and the correct names/count of fields, we use a Row Dict, and perform a "switch" for the record type on the "type" field, which is the key for this Edit Form field layout data.
 
 ### DDD
 
@@ -180,10 +194,22 @@ Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict
                                 "value": {"type": "string"}
                             }
                         }
-                    }
+                    }, "..."]
                 }, "..."]
-            }, "..."]
+            }
         }
     }
 }
 ```
+
+"form" gets a list (columns), in a list (rows), and inside there specifies a Row Dict, which is variadic, so that the columns can have more than one of these dictionaries per column-list.
+
+Because the first "rowdict" entry doesnt contain a ``"optional": true` field, there must be at least 1 dictionary per column-list.  If this contained `"optional": false`, then the column-lists could be empty.
+
+We set "switch_field" to "type", so we will be using the "type" field in the dictionaries to set which possible fields they can have.  The available values for the "type" field are the keys in "switch_rows", so type can be: text, select and hidden
+
+The "rowdict" in the columns-list is followed by a variadic "...", so there can be more than 1 dictionary in the column-list, which makes more than 1 column.
+
+The column-list "list" is followed by a variadic "...", so there can be multiple rows as the column-list is repeated.
+
+The outer list contains the list of rows.
