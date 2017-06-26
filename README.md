@@ -242,7 +242,7 @@ The outer list contains the list of rows.
 6
 ```
 
-If we want my data to be a single value.
+If we want the data to be a single value.
 
 ### DDD
 
