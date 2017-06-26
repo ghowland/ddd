@@ -208,7 +208,7 @@ Because we are using rows, and we want to have repeating dictionaries in those r
 
 Because the first `"rowdict"` entry doesnt contain a `"optional": true` field, there must be at least 1 dictionary per column-list.  If this contained `"optional": false`, then the column-lists could be empty.
 
-We set `"switch_field"` to `"type"`, so we will be using the `"type"` field in the dictionaries to set which possible fields they can have.  The available values for the `"type"` field are the keys in `"switch_rows"`, so type can be: text, select and hidden
+We set `"switch_field"` to `"type"`, so we will be using the `"type"` field in the dictionaries to set which possible fields they can have.  The available values for the `"type"` field are the keys in `"switch_rows"`, so type can be: `text`, `select` and `hidden`
 
 The "rowdict" in the columns-list is followed by a variadic `"..."`, so there can be more than 1 dictionary in the column-list, which makes more than 1 column.
 
