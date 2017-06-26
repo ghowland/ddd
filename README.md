@@ -75,6 +75,8 @@ Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict
 
 The above field is a default value in all of our types.  Any of them can set this to true, and then do not need to exist.  If it is not specified, one of the specified requirements must be met in the data to be valid.
 
+For List elements, only the last element can be optional.  This last element can be variadic, so it can repeat, but having optional elements in the middle of the list is not worth supporting (anti-goal).
+
 ### Value Requirements Constraints
 
 ```
