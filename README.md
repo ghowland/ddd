@@ -51,6 +51,24 @@ such as "type", which allows many different row formats to exist, for the dictio
 
 Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict Key/Value elements.
 
+### Optionality
+
+```
+"optional": false
+```
+
+The above field is a default value in all of our types.  Any of them can be optional, for instance.
+
+### Value Requirements Constraints
+
+```
+min: 0,
+max: 100
+```
+
+Value Requirements can have different constraints added to them as well, such as min/max for numbers, which are
+also used for strings as min/max size.  Other constraints can also be added for Value Requirements.
+
 
 # Examples
 
