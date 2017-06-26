@@ -10,10 +10,10 @@ It can be used for validation as well as population.
 
 There are 4 types of data in DDD:
 
-1. List (list)
-2. Key Dict (keydict)
-3. Row Dict (rowdict)
-4. Value Requirement
+1. List ("list")
+2. Key Dict ("keydict")
+3. Row Dict ("rowdict")
+4. Value Requirement ("type")
 
 Each of these is wrapped in a dictionary ({}) so that they can contain arguments.  For example:
 
@@ -46,7 +46,7 @@ such as "type", which allows many different row formats to exist, for the dictio
 **Value Requirement:**
 
 ```
-{"type": "string", "optional": false}
+{"type": "string"}
 ```
 
 Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict Key/Value elements.
