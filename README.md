@@ -44,7 +44,7 @@ such as "type", which allows many different row formats to exist, for the dictio
 **Value Requirement:**
 
 ```
-{}
+{"type": "string", "optional": false}
 ```
 
 Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict Key/Value elements.
