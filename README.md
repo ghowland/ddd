@@ -1,6 +1,6 @@
 # DDD - Data Definition Data
 
-DDD is a format for describing what data should look like.
+DDD is a format for describing what data should look like.  It can be used for validation as well as population.
 
 # Data Types
 
