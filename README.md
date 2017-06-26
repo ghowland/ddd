@@ -222,7 +222,7 @@ The outer list contains the list of rows.
 6
 ```
 
-If I want my data to be a single value.
+If we want my data to be a single value.
 
 ### DDD
 
@@ -230,7 +230,7 @@ If I want my data to be a single value.
 {"type": "int", "optional": false}
 ```
 
-This ensures an integer must exist in this data.  If I make it optional, it could be empty or return None/nil/etc, depending on the implementation.
+This ensures an integer must exist in this data.  If we make it optional, it could be empty or return None/nil/etc, depending on the implementation.
 
 ## JSON list of things
 
