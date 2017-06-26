@@ -87,7 +87,7 @@ also used for strings as min/max size.  Other constraints can also be added for 
 
 In the above format, the inner 2 string pairs are fixed in length, but we can have any number of those 2-tuples of strings, or any number of the next higher level of list element (which contain the groupings of 2-tuple strings)
 
-### DDD
+#### DDD
 
 ```{
      "list": [
@@ -128,7 +128,7 @@ In the above format, the inner 2 string pairs are fixed in length, but we can ha
 
 This data has a fixed field (`table`), and then a dictionary that can have any number of fields (`defaults`) with any values.
 
-### DDD
+#### DDD
 
 ```
 {
@@ -177,7 +177,7 @@ This is similar to the previous example, with a fixed string in `"dialog_title"`
 
 Because we are using rows, and we want to have repeating dictionaries in those rows with correct field values/types and the correct names/count of fields, we use a Row Dict, and perform a "switch" for the record type on the `"type"` field, which is the key for this Edit Form field layout data.
 
-### DDD
+#### DDD
 
 ```
 {
@@ -244,7 +244,7 @@ The outer list contains the list of rows.
 
 If we want the data to be a single value.
 
-### DDD
+#### DDD
 
 ```
 {"type": "int", "optional": false}
@@ -258,7 +258,7 @@ This ensures an integer must exist in this data.  If we make it optional, it cou
 ["Bob", 5.1, [1,2,3,1000]]
 ```
 
-### DDD
+#### DDD
 
 ```
 {"list":
