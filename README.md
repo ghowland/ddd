@@ -215,3 +215,47 @@ The `"rowdict"` in the columns-list is followed by a variadic `"..."`, so there 
 The column-list `"list"` is followed by a variadic `"..."`, so there can be multiple rows as the column-list is repeated.
 
 The outer list contains the list of rows.
+
+## Just a number
+
+```
+6
+```
+
+If I want my data to be a single value.
+
+### DDD
+
+```
+{"type": "int", "optional": false}
+```
+
+This ensures an integer must exist in this data.  If I make it optional, it could be empty or return None/nil/etc, depending on the implementation.
+
+## JSON list of things
+
+```
+["Bob", 5, [1,2,3,1000]]
+```
+
+### DDD
+
+```
+{"list":
+  [
+    {"type": "string"},
+    {"type": "int"},
+    {"list":
+      [
+        {"type": "int", "optional": true, "min": 0, "max": 1001},
+        "..."
+      ]
+    }
+  ]
+}
+```
+
+This is a list with 3 fixed elements:  a string, an int, and a list.
+
+The inner list contains 0 to an infinite number of integers, with a minimum value of 0, and a maximum value of 1001.
+
