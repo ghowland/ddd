@@ -67,7 +67,7 @@ max: 100
 ```
 
 Value Requirements can have different constraints added to them as well, such as min/max for numbers, which are
-also used for strings as min/max size.  Other constraints can also be added for Value Requirements.
+also used for strings as min/max size.  Other constraints can also be added for Value Requirements constraining in the implementation.
 
 
 # Examples
