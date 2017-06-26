@@ -4,8 +4,6 @@
 
 It can be used for validation as well as population.  It was created to guide population of "arbitrary data", which has a format, but there are many different formats the users must populate correctly, so a guide was needed to ensure the creation of correct data.
 
-With DDD, there is not really any "arbitrary" data, as it can be described by DDD, and so is not arbitrary.  "Arbitrary data" would be data that cannot be described by DDD.
-
 *NOTE: DDD is not meant to be able to model any possible data, but it can model many formats of data with very simple descriptions.  I haven't tested it to see what it cannot create/validate yet, but for all the things I currently need to validate/populate, it works well.  DDD probably can't describe XML/HTML, and I'm not sure if it can describe itself.*
 
 # Data Types
