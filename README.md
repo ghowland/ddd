@@ -10,10 +10,10 @@ It can be used for validation as well as population.  It was created to guide po
 
 There are 4 types of data in DDD:
 
-1. List ("list")
-2. Key Dict ("keydict")
-3. Row Dict ("rowdict")
-4. Value Requirement ("type")
+1. List (`list`)
+2. Key Dict (`keydict`)
+3. Row Dict (`rowdict`)
+4. Value Requirement (`type`)
 
 Each of these is wrapped in a dictionary ({}) so that they can contain arguments.  For example:
 
