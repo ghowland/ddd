@@ -2,6 +2,52 @@
 
 DDD is a format for describing what data should look like.
 
+# Data Types
+
+There are 4 types of data in DDD:
+
+1. List (list)
+2. Key Dict (keydict)
+3. Row Dict (rowdict)
+4. Value Requirement
+
+Each of these is wrapped in a dictionary ({}) so that they can contain arguments.  For example:
+
+**List:**
+
+```
+{"list": []}
+```
+
+Lists are sequences of things.  A list can hold any type of DDD data: list, keydict, rowdict, value requirement.
+
+**Key Dict:**
+
+```
+{"keydict": {}}
+```
+
+Key Dicts hold some set of given keys, which are specified in their requirements by the keys.  The keys are typically
+specificied as a value (ex: string), and can be any DDD value: list, keydict or value requirement.  (Row Dicts only appear in lists)
+
+**Row Dict:**
+
+```
+{"rowdict": {}}
+```
+
+Row Dicts are meant to repeat, and so only appear inside lists.  Their requirements are switched on a single field,
+such as "type", which allows many different row formats to exist, for the dictionaries in the list.
+
+**Value Requirement:**
+
+```
+{}
+```
+
+Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict Key/Value elements.
+
+
 # Examples
 
 ## JSON Format: Pairs of strings, that can be repeated in the 2nd and 3rd list depths
