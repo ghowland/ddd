@@ -191,7 +191,7 @@ Because we are using rows, and we want to have repeating dictionaries in those r
                                 "value_match": {"type": "string"},
                                 "value_nomatch": {"type": "string"},
                                 "null_message": {"type": "string", "optional": true},
-                                "items": {"type": "udn"}
+                                "items": {"type": "string"}
                             },
                             "hidden": {
                                 "name": {"type": "string"},
