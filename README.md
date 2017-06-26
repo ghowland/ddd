@@ -52,7 +52,7 @@ Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict
 
 # Examples
 
-## JSON Format: Pairs of strings, that can be repeated in the 2nd and 3rd list depths
+## JSON Format: Pairs of strings in lists, that can be repeated at the 2nd and 3rd list depths
 
 ```
 [
