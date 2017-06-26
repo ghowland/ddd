@@ -57,7 +57,7 @@ For example, here are two different formats of row dictionaries, which are diffe
 {"name":"name", "label":"Name", "placeholder":"widget name", "icon":"icon-file-text", "type":"text", "size":"6", "value":"", "info":"", "color":""}
 ```
 
-The first one only has 2 fields besides the "type" field (hidden), but the second one has 8 other fields.  By allowing selection of the field requirements to switched against the "type" value, we can have differently formatted dictionaries in the same list, following these validation rules.
+The first one only has 2 fields besides the "type" field (`hidden`), but the second one (`text`) has 8 other fields.  By allowing selection of the field requirements to switched against the "type" value, we can have differently formatted dictionaries in the same list, following these validation rules.
 
 **Value Requirement:**
 
