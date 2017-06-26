@@ -210,7 +210,7 @@ Because the first `"rowdict"` entry doesnt contain a `"optional": true` field, t
 
 We set `"switch_field"` to `"type"`, so we will be using the `"type"` field in the dictionaries to set which possible fields they can have.  The available values for the `"type"` field are the keys in `"switch_rows"`, so type can be: `text`, `select` and `hidden`
 
-The "rowdict" in the columns-list is followed by a variadic `"..."`, so there can be more than 1 dictionary in the column-list, which makes more than 1 column.
+The `"rowdict"` in the columns-list is followed by a variadic `"..."`, so there can be more than 1 dictionary in the column-list, which makes more than 1 column.
 
 The column-list `"list"` is followed by a variadic `"..."`, so there can be multiple rows as the column-list is repeated.
 
