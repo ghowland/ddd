@@ -67,6 +67,30 @@ The first one only has 2 fields besides the "type" field (`hidden`), but the sec
 
 Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict Key/Value elements.
 
+### Variadic
+
+```
+"..."
+```
+
+After any element, except the first node element, this "..." string can be placed afterwards which means that this last element can be repeated infinitely at this point.
+
+This also covers any sub-elements of the previous element, as they are part of that element's spec.
+
+### Indexing
+
+Starting with the first-node elemnent "0", each sub-element adds depth or increments the current counter.
+
+The first child of of "0" will be "0.0".  If there is a peer-element of "0.0", which is the second child of "0", it will be "0.1", third child "0.2", etc.
+
+More children-elements of those continue the depth to "0.1.0" (the second child of the first-node, with a child as well).
+
+### Nestability
+
+Using the index numbers in the same way as the Variadic "...", they can be placed in any child-element position (non-first-node), and signifies that the entire structure from that index can appear again in this position.
+
+Placing "0.0.0" would reference that 2nd child object of the first-node.
+
 ### Optionality
 
 ```
@@ -297,3 +321,65 @@ This is a list with 3 fixed elements:  a string, a float, and a list.
 
 The inner list contains 0 to an infinite number of integers, with a minimum value of 0, and a maximum value of 1001.
 
+## JSON basic nesting
+
+```
+{
+    "value": 1234,
+    "child":
+    {
+        "value": 2345,
+        "child": {
+            "value": 3456
+            "child": {}
+        }
+    }
+}
+```
+
+This is a single dict `{"value": int, "child": optional_child"}` where the `"optional_child"` is repeating it's parent forever, potentially.  It allows infinite nesting of the root-node's format.
+
+```
+{"keydict":
+  {
+    "value": {"type": "int"}
+    "child": "0"
+  }
+}
+```
+
+The root node is indexed by the "0" value, and so each "child" value can (optionally) have a repeat of the "0" root node in that position.
+
+## JSON non-root-node nesting
+
+```
+{
+    "contacts": {
+        "name": "John Doe",
+        "age": 30,
+        "phone": "+1-555-555-5555",
+        "contacts": {
+            "name": "Bob Ross",
+            "age": 72,
+            "phone": "+1-555-444-7777",
+        }
+    }
+}
+```
+
+```
+{"keydict":
+  {
+    "contacts": {"keydict":
+      {
+        "name": {"type": "string"},
+        "age": {"type": "int", "min": 0, "max": 200},
+        "phone": {"type": "string"},
+        "contacts": "0.1"
+      }
+    }
+  }
+}
+```
+
+This example is like the previous one, but shows a non-"0" index.  Any position or depth would be the same.
