@@ -67,7 +67,7 @@ The first one only has 2 fields besides the "type" field (`hidden`), but the sec
 
 Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict Key/Value elements.
 
-### Variadic
+### Variadic Elements
 
 ```
 "..."
@@ -77,7 +77,7 @@ After any element, except the first node element, this "..." string can be place
 
 This also covers any sub-elements of the previous element, as they are part of that element's spec.
 
-### Indexing
+### Indexing Elements
 
 Starting with the first-node elemnent "0", each sub-element adds depth or increments the current counter.
 
@@ -85,13 +85,13 @@ The first child of of "0" will be "0.0".  If there is a peer-element of "0.0", w
 
 More children-elements of those continue the depth to "0.1.0" (the second child of the first-node, with a child as well).
 
-### Nestability
+### Nesting Elements
 
 Using the index numbers in the same way as the Variadic "...", they can be placed in any child-element position (non-first-node), and signifies that the entire structure from that index can appear again in this position.
 
 Placing "0.0.0" would reference that 2nd child object of the first-node.
 
-### Optionality
+### Optional Elements
 
 ```
 "optional": false
