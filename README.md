@@ -284,6 +284,8 @@ The column-list `"list"` is followed by a variadic `"..."`, so there can be mult
 
 The outer list contains the list of rows.
 
+The `"switch_rows"` key can be `"*"` as a default, so that any other "type" = "something_else" would use the "default" specification.
+
 ## Just a number
 
 ```
