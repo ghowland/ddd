@@ -197,6 +197,8 @@ We use a `"keydict"` at the top level, because we are basing this on dictionary 
 
 Defaults uses the `"*"` character to specify any field name can go here (any number of them as well), and the value requirements are type `"any"`, so any type of data can be stored here.
 
+The `"*"` character acts as a Glob, so "foo*" and "*foo" or "*foo*" would match their respective strings.  The `"*"` is not allowed inside field names.  If there are conflicts, it chooses the explicit key over a glob, if they are not explicit they are alpha-sorted order, and the first item is chosen.  (NOTE: This could also be the longest key that matches)
+
 ## JSON Format: Description of form field layout
 
 ```
