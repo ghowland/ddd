@@ -85,6 +85,8 @@ The first child of of "0" will be "0.0".  If there is a peer-element of "0.0", w
 
 More children-elements of those continue the depth to "0.1.0" (the second child of the first-node, with a child as well).
 
+The Key Dict type uses the key string instead of the position, so "0.contacts", instead of "0.0".  This is because Key Dicts would require sorting to be positional, which would change if a new key changes the old sorting values.
+
 ### Nesting Elements
 
 Using the index numbers in the same way as the Variadic "...", they can be placed in any child-element position (non-first-node), and signifies that the entire structure from that index can appear again in this position.
@@ -375,7 +377,7 @@ The root node is indexed by the "0" value, and so each "child" value can (option
         "name": {"type": "string"},
         "age": {"type": "int", "min": 0, "max": 200},
         "phone": {"type": "string"},
-        "contacts": "0.0"
+        "contacts": "0.contacts"
       }
     }
   }
