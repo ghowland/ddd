@@ -375,7 +375,7 @@ The root node is indexed by the "0" value, and so each "child" value can (option
         "name": {"type": "string"},
         "age": {"type": "int", "min": 0, "max": 200},
         "phone": {"type": "string"},
-        "contacts": "0.1"
+        "contacts": "0.0"
       }
     }
   }
