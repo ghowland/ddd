@@ -75,7 +75,7 @@ Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict
 "..."
 ```
 
-After any element, except the first node element, this "..." string can be placed afterwards which means that this last element can be repeated infinitely at this point.
+At the end of a List the"..." string can be placed afterward the last element which means that this last element can be repeated infinitely from here.
 
 This also covers any sub-elements of the previous element, as they are part of that element's spec.
 
