@@ -67,6 +67,8 @@ The first one only has 2 fields besides the "type" field (`hidden`), but the sec
 
 Value Requirements appear in lists, or on the Value side of Key Dict or Row Dict Key/Value elements.
 
+# Dynamics and Constraints
+
 ### Variadic Elements
 
 ```
