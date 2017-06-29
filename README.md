@@ -124,6 +124,13 @@ Value Requirements can have different constraints added to them as well, such as
 also used for strings as min/max size.  Other constraints can also be added for Value Requirements constraining in the implementation.
 
 
+### Default Values
+
+Inside the Value Requirement and optional field of "default" can specify the default value:
+
+Example: `{"type": "boolean", "default": false}`
+
+
 # Examples
 
 ## JSON Format: Pairs of strings in lists, that can be repeated at the 2nd and 3rd list depths
