@@ -96,7 +96,9 @@ Using the index numbers in the same way as the Variadic "...", they can be place
 Placing "0.0.0" would reference that 2nd child object of the first-node.
 
 Example: `"0"`
+
 Example: `{"index": "0"}`
+
 Example: `{"index": "0", "optional": true}`
 
 Three examples showing the same operation, with the final allowing an optional nesting.
