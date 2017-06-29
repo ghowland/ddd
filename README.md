@@ -483,3 +483,124 @@ This example is like the previous one, but shows a non-"0" index.  Any position 
 }
 ```
 
+#### DDD
+
+```{
+   	"keydict": {
+   		"message": {
+   			"keydict": {
+   				"_id": {
+   					"type": "int",
+   					"min": 0
+   				},
+   				"name": {
+   					"type": "string"
+   				},
+   				"fields": {
+   					"keydict": {
+   						"*": {
+   							"_id": {
+   								"type": "int",
+   								"min": 0
+   							},
+   							"name": {
+   								"type": "string"
+   							},
+   							"field_type": {
+   								"type": "string"
+   							},
+   							"subfields": {
+   								"index": "0.message.fields",
+   								"optional": true
+   							},
+   							"not_null": {
+   								"type": "boolean"
+   							},
+   							"provision_state": {
+   								"type": "int"
+   							},
+   							"relation": {
+   								"optional": true,
+   								"keydict": {
+   									"_id": {
+   										"type": "int",
+   										"min": 0
+   									},
+   									"field_id": {
+   										"type": "int",
+   										"min": 0
+   									},
+   									"collection": {
+   										"type": "string"
+   									},
+   									"field": {
+   										"type": "string"
+   									}
+   								}
+   							}
+   						}
+   					}
+   				},
+   
+   				"indexes": {
+   					"keydict": {
+   						"created": {
+   							"keydict": {
+   								"_id": {
+   									"type": "int",
+   									"min": 0
+   								},
+   								"name": {
+   									"type": "string"
+   								},
+   								"fields": {
+   									"list": [{
+   											"type": "string"
+   										},
+   										"..."
+   									]
+   								},
+   								"provision_state": {
+   									"type": "int"
+   								}
+   							}
+   						}
+   					}
+   				},
+   
+   				"partitions": {
+   					"list": [{
+   						"keydict": {
+   							"_id": {
+   								"type": "int",
+   								"min": 0
+   							},
+   							"start_id": {
+   								"type": "int",
+   								"min": 0
+   							},
+   							"shard_config": {
+   								"keydict": {
+   									"shard_key": {
+   										"type": "string"
+   									},
+   									"hash_method": {
+   										"type": "string"
+   									},
+   									"shard_method": {
+   										"type": "string"
+   									}
+   								}
+   							}
+   						}
+   					}]
+   				},
+   				"provision_state": {
+   					"type": "int"
+   				}
+   			}
+   		}
+   	}
+   }
+```
+
