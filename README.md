@@ -399,3 +399,87 @@ The root node is indexed by the "0" value, and so each "child" value can (option
 ```
 
 This example is like the previous one, but shows a non-"0" index.  Any position or depth would be the same.
+
+
+## JSON Advanced Example
+
+```
+{
+    "message": {
+        "_id": 4184,
+        "name": "message",
+        "fields": {
+            "_id": {
+                "_id": 17433,
+                "name": "_id",
+                "field_type": "_int",
+                "not_null": true,
+                "provision_state": 3
+            },
+            "data": {
+                "_id": 17428,
+                "name": "data",
+                "field_type": "_document",
+                "subfields": {
+                    "content": {
+                        "_id": 17429,
+                        "name": "content",
+                        "field_type": "_string",
+                        "not_null": true,
+                        "provision_state": 3
+                    },
+                    "created": {
+                        "_id": 17432,
+                        "name": "created",
+                        "field_type": "_int",
+                        "not_null": true,
+                        "provision_state": 3
+                    },
+                    "created_by": {
+                        "_id": 17431,
+                        "name": "created_by",
+                        "field_type": "_string",
+                        "not_null": true,
+                        "provision_state": 3
+                    },
+                    "thread_id": {
+                        "_id": 17430,
+                        "name": "thread_id",
+                        "field_type": "_int",
+                        "not_null": true,
+                        "relation": {
+                            "_id": 1250,
+                            "field_id": 17427,
+                            "collection": "thread",
+                            "field": "_id"
+                        },
+                        "provision_state": 3
+                    }
+                },
+                "provision_state": 3
+            }
+        },
+        "indexes": {
+            "created": {
+                "_id": 5443,
+                "name": "created",
+                "fields": [
+                    "data.created"
+                ],
+                "provision_state": 3
+            }
+        },
+        "partitions": [{
+            "_id": 4180,
+            "start_id": 1,
+            "shard_config": {
+                "shard_key": "_id",
+                "hash_method": "cast",
+                "shard_method": "mod"
+            }
+        }],
+        "provision_state": 3
+    }
+}
+```
+
