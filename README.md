@@ -95,6 +95,12 @@ Using the index numbers in the same way as the Variadic "...", they can be place
 
 Placing "0.0.0" would reference that 2nd child object of the first-node.
 
+Example: `"0"`
+Example: `{"index": "0"}`
+Example: `{"index": "0", "optional": true}`
+
+Three examples showing the same operation, with the final allowing an optional nesting.
+
 ### Optional Elements
 
 ```
@@ -284,7 +290,7 @@ The column-list `"list"` is followed by a variadic `"..."`, so there can be mult
 
 The outer list contains the list of rows.
 
-The `"switch_rows"` key can be `"*"` as a default, so that any other "type" = "something_else" would use the "default" specification.
+The `"switch_rows"` key can be `"*"` as a glob, and can be used as a global default, or partial glob, in the same ways as the Key Dict globs.
 
 ## Just a number
 
