@@ -135,7 +135,7 @@ Example: `{"type": "boolean", "default": false}`
 
 To use a value from another location (enforced duplication) can be done in any Value Requirement (type), with the field `"index_value"`.
 
-Example: `{"type": "string", "index_value": "0.*"}
+Example: `{"type": "string", "index_value": "0.*"}`
 
 See the "JSON Advanced" example to see the above in use.
 
