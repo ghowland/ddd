@@ -357,7 +357,7 @@ This is a single dict `{"value": int, "child": optional_child"}` where the `"opt
 {"keydict":
   {
     "value": {"type": "int"}
-    "child": "0"
+    "child": {"index": "0", "optional": true}
   }
 }
 ```
