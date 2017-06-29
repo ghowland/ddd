@@ -131,6 +131,15 @@ Inside the Value Requirement and optional field of "default" can specify the def
 Example: `{"type": "boolean", "default": false}`
 
 
+### Reference Values
+
+To use a value from another location (enforced duplication) can be done in any Value Requirement (type), with the field `"index_value"`.
+
+Example: `{"type": "string", "index_value": "0.*"}
+
+See the "JSON Advanced" example to see the above in use.
+
+
 # Examples
 
 ## JSON Format: Pairs of strings in lists, that can be repeated at the 2nd and 3rd list depths
@@ -494,7 +503,7 @@ This example is like the previous one, but shows a non-"0" index.  Any position 
 
 ```{
   "keydict": {
-    "message": {
+    "*": {
       "keydict": {
         "_id": {"type": "int", "min": 0},
         "name": {"type": "string"},
@@ -502,10 +511,10 @@ This example is like the previous one, but shows a non-"0" index.  Any position 
           "keydict": {
             "*": {
               "_id": {"type": "int", "min": 0},
-              "name": {"type": "string"},
+              "name": {"type": "string", "index_value": "0.*"},
               "field_type": {"type": "string"},
               "subfields": {
-                "index": "0.message.fields",
+                "index": "0.*.fields",
                 "optional": true
               },
               "not_null": {"type": "boolean"},
@@ -563,3 +572,6 @@ This example is like the previous one, but shows a non-"0" index.  Any position 
 }
 ```
 
+Note the `Reference Value` usage of `"name": {"type": "string", "index_value": "0.*"}`.  This means whatever the field name is for `"*"`, this string must have the same value.
+
+This is used as a Nested spec here `"index": "0.*.fields",`, where the `*` is the strict index name, to get to `fields`, to use as the nested specification.
