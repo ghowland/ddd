@@ -137,7 +137,46 @@ To use a value from another location (enforced duplication) can be done in any V
 
 Example: `{"type": "string", "index_value": "0.*"}`
 
-See the "JSON Advanced" example to see the above in use.
+See the "JSON Advanced Example" example to see the above in use.
+
+### Editor Layout Information
+
+Making an editor for KeyDict or RowDict types, we will want to perform layout of the fields we want to edit.
+
+Any information you want to put into a "layout" attribute key can be used by your editor:
+
+**KeyDict:**
+
+```
+{
+  "keydict": {
+    "table": {
+      "type": "string"
+      "layout": {"row": 0, "column": 0, "size": 3}
+    }
+}
+```
+
+**RowDict:**
+
+
+```
+{
+  "list": [{
+    "rowdict": {
+       "switch_field": "type",
+         "switch_rows": {
+           "text": {
+             "name": {"type": "string", "layout": {"row": 0, "column": 0, "size": 6}},
+             "label": {"type": "string", "layout": {"row": 0, "column": 1, "size": 6}},
+             "icon": {"type": "string", "layout": {"row": 1, "column": 0, "size": 4}},
+             "size": {"type": "int", "min": 2, "max": 12, "layout": {"row": 1, "column": 1, "size": 4}},
+             "value": {"type": "string", "layout": {"row": 1, "column": 2, "size": 4}}
+             "placeholder": {"type": "string", "layout": {"row": 2, "column": 0, "size": 12}},
+        }
+    }]  
+}
+```
 
 
 # Examples
