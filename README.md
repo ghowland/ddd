@@ -2,7 +2,11 @@
 
 **DDD is a format for describing what data should look like.**
 
-It can be used for validation as well as population, by which I means populating the data via the constraints of the specification.  It was created to guide population of "arbitrary data", which has a format, but there are many different formats the users must populate correctly, so a guide was needed to ensure the creation of correct data.
+It can be used for validation as well as population, by which I means populating the data via the constraints of the specification.
+
+It was created to guide population of "arbitrary data", which has been given a specification, so that user's can enter complex sets of data, which have simple or more complex constraints.
+
+The goal is to provide a way to rapidly specify what data you want collected, and then have generic code render the collection form and perform validation of the user's input, so you get the data you wanted, without having to perform custom programming.
 
 *NOTE: DDD is not meant to be able to model any possible data, but it can model many formats of data with very simple descriptions.  I haven't tested it to see what it cannot create/validate yet, but for all the things I currently need to validate/populate, it works well.  DDD probably can't describe XML/HTML, and I'm not sure if it can describe itself; neither of which are goals for the format.*
 
