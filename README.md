@@ -663,4 +663,6 @@ This is used as a Nested spec here `"index": "0.*.fields",`, where the `*` is th
 }
 ```
 
-This example is like the previous one, but shows a non-"0" index.  Any position or depth would be the same.
+This describes how to hierarchically template text.
+
+The entire document is embedded into itself N times, and at M depths, in the "items" KeyDict.
