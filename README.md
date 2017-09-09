@@ -152,13 +152,12 @@ Any information you want to put into a "layout" attribute key can be used by you
   "keydict": {
     "table": {
       "type": "string"
-      "layout": {"row": 0, "column": 0, "size": 3}
+      "layout": {"row": 0, "column": 0, "size": 6}
     }
 }
 ```
 
 **RowDict:**
-
 
 ```
 {
@@ -614,3 +613,54 @@ This example is like the previous one, but shows a non-"0" index.  Any position 
 Note the `Reference Value` usage of `"name": {"type": "string", "index_value": "0.*"}`.  This means whatever the field name is for `"*"`, this string must have the same value.
 
 This is used as a Nested spec here `"index": "0.*.fields",`, where the `*` is the strict index name, to get to `fields`, to use as the nested specification.
+
+
+## Hierarchical Text Templating
+
+```
+{
+    "text": "Something {{index .Map \"value\"}}",
+    "items": {
+        "value": {
+            "query": {
+                "table": "user",
+                "filter": [{"name": ["=", "ghowland"]}]
+            },
+            "text": "Template: {{index .Map \"name\"}}"
+        }
+    }
+}
+```
+
+```
+{"keydict":
+  {
+    "query": {"keydict":
+      {
+        "table": {"type": "string"},
+        "filter": {"rowdict":
+          [
+            {"keydict":
+              {
+                "rowdict": [
+                  {"type": "string"},
+                  {"type": "string"}
+                ]
+              }
+            },
+            {"variadic": true}
+          ]
+        }
+      }
+    },
+    "text": {"type": "string"},
+    "items": {"keydict":
+      {
+        "*": {"index": "0", "optional": true}
+      }
+    }
+  }
+}
+```
+
+This example is like the previous one, but shows a non-"0" index.  Any position or depth would be the same.
