@@ -644,7 +644,7 @@ This is used as a Nested spec here `"index": "0.*.fields",`, where the `*` is th
               {
                 "rowdict": [
                   {"type": "string"},
-                  {"type": "string"}
+                  {"type": "int|float|string"}
                 ]
               }
             },
