@@ -2,7 +2,7 @@
 
 **DDD is a format for describing what data should look like.**
 
-It can be used for validation as well as population, by which I means populating the data via the constraints of the specification.
+It can be used for validation as well as population, by which "population" means entering data via the constraints of the specification, to be able to take input with a complex structure and validate it.
 
 It was created to guide population of "arbitrary data", which has been given a specification, so that user's can enter complex sets of data, which have simple or more complex constraints.
 
