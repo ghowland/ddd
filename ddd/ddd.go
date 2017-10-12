@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 	"sort"
-	. "yudien/yudienutil"
+	. "github.com/ghowland/yudien/yudienutil"
 )
 
 
